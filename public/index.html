@@ -6,39 +6,41 @@
     <title>DigiSou9 - متجرك الأول للمنتجات والخدمات الرقمية</title>
     <meta name="description" content="متجر DigiSou9 للحصول على الاشتراكات والبرامج الرقمية بأفضل الأسعار مع تسليم فوري وضمان كامل.">
     
-    <!-- أيقونة الموقع في المتصفح (Favicon) -->
+    <!-- أيقونة الموقع في المتصفح -->
     <link rel="icon" type="image/png" href="logo.png">
 
     <!-- كود إثبات ملكية Google Search Console -->
     <meta name="google-site-verification" content="gJY16M3anlw16iB2EkpVIADuM0FuFVeP9CmYrkwJcXs" />
 
-    <!-- معاينة الروابط عند المشاركة (Open Graph) -->
+    <!-- Open Graph للمعاينة عند المشاركة -->
     <meta property="og:title" content="DigiSou9 - المتجر الرقمي الشامل">
     <meta property="og:description" content="اشتراكات برامج وتطبيقات أصلية بأفضل الأسعار وضمان كامل طوال المدة.">
     <meta property="og:image" content="banner.png">
     <meta property="og:type" content="website">
 
-    <!-- خط Cairo من Google Fonts -->
+    <!-- خط Cairo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- مكتبة أيقونات FontAwesome -->
+    <!-- أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-main: #070d19;
-            --bg-card: #0e1a2f;
-            --bg-card-hover: #13223f;
-            --primary: #38bdf8;
-            --primary-hover: #0ea5e9;
+            --bg-main: #060913;
+            --bg-card: rgba(15, 23, 42, 0.85);
+            --bg-card-hover: rgba(22, 36, 67, 0.95);
+            --primary: #00d2ff;
+            --primary-glow: rgba(0, 210, 255, 0.35);
             --wa-green: #25d366;
-            --wa-hover: #1ebd5a;
-            --text-main: #ffffff;
+            --wa-glow: rgba(37, 211, 102, 0.45);
+            --flame: #ff5722;
+            --gold: #fbbf24;
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border-color: #1e293b;
-            --gold: #facc15;
+            --border-color: rgba(56, 189, 248, 0.15);
+            --border-glow: rgba(0, 210, 255, 0.5);
         }
 
         * {
@@ -50,9 +52,13 @@
 
         body {
             background-color: var(--bg-main);
+            background-image: 
+                radial-gradient(circle at 20% 15%, rgba(0, 210, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
             color: var(--text-main);
             line-height: 1.6;
             padding-bottom: 40px;
+            overflow-x: hidden;
         }
 
         .container {
@@ -61,7 +67,7 @@
             margin: 0 auto;
         }
 
-        /* رأس الصفحة (Header) */
+        /* Header */
         header {
             text-align: center;
             padding: 35px 20px 20px;
@@ -76,17 +82,19 @@
         }
 
         .site-logo {
-            width: 75px;
-            height: 75px;
+            width: 70px;
+            height: 70px;
             object-fit: contain;
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 20px var(--primary-glow);
         }
 
         .site-title {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             font-weight: 900;
-            color: var(--primary);
+            background: linear-gradient(135deg, #ffffff 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .banner-wrapper {
@@ -97,20 +105,21 @@
         .hero-banner {
             width: 100%;
             height: auto;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            border-radius: 18px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 210, 255, 0.15);
             border: 1px solid var(--border-color);
             display: block;
         }
 
         .subtitle {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             max-width: 680px;
             margin: 0 auto 25px;
+            font-weight: 600;
         }
 
-        /* شريط مميزات المتجر */
+        /* Trust Badges */
         .trust-bar {
             display: flex;
             justify-content: center;
@@ -120,15 +129,24 @@
         }
 
         .trust-item {
-            background: rgba(30, 41, 59, 0.6);
+            background: rgba(15, 23, 42, 0.8);
             border: 1px solid var(--border-color);
-            padding: 8px 18px;
+            padding: 9px 20px;
             border-radius: 50px;
             font-size: 0.9rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 8px;
             color: var(--text-main);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.25s ease;
+        }
+
+        .trust-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+            transform: translateY(-2px);
         }
 
         .trust-item i {
@@ -137,16 +155,22 @@
 
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
+            font-weight: 900;
             margin: 45px 0 25px;
-            color: var(--primary);
+            color: var(--text-main);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        /* أزرار الفلترة والتصنيف */
+        .section-title i {
+            color: var(--flame);
+            filter: drop-shadow(0 0 8px rgba(255, 87, 34, 0.6));
+        }
+
+        /* Categories Filter */
         .filter-container {
             display: flex;
             justify-content: center;
@@ -156,81 +180,101 @@
         }
 
         .filter-btn {
-            background: rgba(30, 41, 59, 0.5);
+            background: rgba(15, 23, 42, 0.6);
             border: 1px solid var(--border-color);
             color: var(--text-muted);
-            padding: 8px 18px;
+            padding: 9px 20px;
             border-radius: 30px;
             cursor: pointer;
             font-size: 0.95rem;
-            font-weight: 600;
-            transition: all 0.25s ease;
+            font-weight: 700;
+            transition: all 0.3s ease;
         }
 
         .filter-btn:hover, .filter-btn.active {
-            background: var(--primary);
-            color: #070d19;
-            border-color: var(--primary);
-            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), #0284c7);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 0 20px var(--primary-glow);
+            transform: translateY(-2px);
         }
 
-        /* شبكة المنتجات */
+        /* Products Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
         }
 
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
+            border-radius: 20px;
+            padding: 26px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            backdrop-filter: blur(10px);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             background: var(--bg-card-hover);
-            border-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+            border-color: var(--border-glow);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 210, 255, 0.2);
         }
 
         .card-badge {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(56, 189, 248, 0.15);
+            top: 16px;
+            left: 16px;
+            background: rgba(0, 210, 255, 0.12);
+            border: 1px solid rgba(0, 210, 255, 0.3);
             color: var(--primary);
-            font-size: 0.75rem;
-            padding: 4px 10px;
+            font-size: 0.78rem;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .card-icon {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            height: 55px;
+            height: 60px;
             margin-bottom: 15px;
         }
 
-        .card-icon img {
-            width: 50px;
-            height: 50px;
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon-box img {
+            width: 100%;
+            height: 100%;
             object-fit: contain;
-            border-radius: 10px;
+        }
+
+        .icon-box i {
+            font-size: 1.8rem;
         }
 
         .card-title {
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: 1.35rem;
+            font-weight: 800;
             margin-bottom: 8px;
+            color: #ffffff;
         }
 
         .card-desc {
@@ -238,19 +282,25 @@
             font-size: 0.95rem;
             margin-bottom: 20px;
             min-height: 48px;
+            line-height: 1.5;
         }
 
         .card-price {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 900;
             color: #4ade80;
+            text-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
             margin-bottom: 15px;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
         }
 
         .card-price span {
-            font-size: 0.9rem;
-            font-weight: normal;
+            font-size: 0.95rem;
+            font-weight: 700;
             color: var(--text-muted);
+            text-shadow: none;
         }
 
         .btn-wa {
@@ -258,29 +308,35 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background-color: var(--wa-green);
+            background: linear-gradient(135deg, #25d366, #128c7e);
             color: #ffffff;
             text-decoration: none;
-            padding: 12px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: background-color 0.2s ease, transform 0.2s ease;
+            padding: 13px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px var(--wa-glow);
+            transition: all 0.25s ease;
         }
 
         .btn-wa:hover {
-            background-color: var(--wa-hover);
-            transform: scale(1.02);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
         }
 
-        /* قسم طرق الدفع */
+        /* Payments */
         .payments-bar {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
-            margin: 50px 0;
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin: 55px 0;
             text-align: center;
+        }
+
+        .payments-bar h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
         }
 
         .payments-list {
@@ -288,14 +344,15 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .payment-tag {
-            background: #1e293b;
-            padding: 8px 18px;
-            border-radius: 8px;
-            font-weight: 600;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--border-color);
+            padding: 9px 20px;
+            border-radius: 10px;
+            font-weight: 700;
             font-size: 0.95rem;
             color: #e2e8f0;
             display: flex;
@@ -303,7 +360,7 @@
             gap: 8px;
         }
 
-        /* قسم آراء الزبائن */
+        /* Reviews */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -314,8 +371,8 @@
         .review-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 20px;
+            border-radius: 16px;
+            padding: 22px;
         }
 
         .review-header {
@@ -327,40 +384,41 @@
 
         .review-stars {
             color: var(--gold);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
         }
 
         .review-name {
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1rem;
         }
 
         .review-text {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
 
-        /* قسم الأسئلة الشائعة FAQ */
+        /* FAQ */
         .faq-list {
             max-width: 800px;
             margin: 0 auto 50px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .faq-item {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 16px 20px;
+            border-radius: 14px;
+            padding: 18px 22px;
             cursor: pointer;
         }
 
         .faq-item summary {
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.05rem;
-            color: var(--text-main);
             list-style: none;
             display: flex;
             justify-content: space-between;
@@ -385,42 +443,44 @@
         }
 
         .faq-item p {
-            margin-top: 12px;
+            margin-top: 14px;
             color: var(--text-muted);
             font-size: 0.95rem;
             border-top: 1px solid var(--border-color);
-            padding-top: 10px;
+            padding-top: 12px;
         }
 
-        /* زر واتساب العائم */
+        /* Floating WhatsApp */
         .floating-wa {
             position: fixed;
             bottom: 25px;
             left: 25px;
-            background-color: var(--wa-green);
+            background: linear-gradient(135deg, #25d366, #128c7e);
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 62px;
+            height: 62px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            font-size: 34px;
+            box-shadow: 0 4px 20px var(--wa-glow);
             z-index: 999;
             text-decoration: none;
-            transition: transform 0.25s ease, background-color 0.25s ease;
+            transition: transform 0.25s ease;
+            animation: radar 2s infinite ease-out;
         }
 
-        .floating-wa:hover {
-            transform: scale(1.1);
-            background-color: var(--wa-hover);
+        @keyframes radar {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* تذييل الصفحة */
+        /* Footer */
         footer {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 55px;
             padding-top: 25px;
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
@@ -434,7 +494,7 @@
             color: var(--primary);
             text-decoration: none;
             margin-top: 10px;
-            font-weight: 600;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -448,18 +508,17 @@
     <header class="container">
         <!-- اللوغو والعنوان -->
         <div class="logo-wrapper">
-            <img src="logo.png" alt="DigiSou9 Logo" class="site-logo" onerror="this.style.display='none'">
+            <img src="logo.png" alt="DigiSou9 Logo" class="site-logo" onerror="this.src='https://cdn.simpleicons.org/shopify/00d2ff'">
             <h1 class="site-title">DigiSou9</h1>
         </div>
 
-        <!-- صورة البانر الرئيسي -->
+        <!-- البانر الترويجي -->
         <div class="banner-wrapper">
-            <img src="banner.png" alt="DigiSou9 Banner" class="hero-banner" onerror="this.style.display='none'">
+            <img src="banner.png" alt="DigiSou9 Banner" class="hero-banner">
         </div>
 
         <p class="subtitle">متجرك الرقمي المتكامل لجميع الاشتراكات والبرامج والتطبيقات الاحترافية بأفضل الأسعار مع تسليم فوري وضمان كامل.</p>
 
-        <!-- شريط المميزات -->
         <div class="trust-bar">
             <div class="trust-item"><i class="fa-solid fa-bolt"></i> تسليم وتفعيل فوري</div>
             <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> ضمان كامل طوال المدة</div>
@@ -471,7 +530,7 @@
         
         <h2 class="section-title"><i class="fa-solid fa-fire"></i> العروض والاشتراكات المتاحة</h2>
 
-        <!-- أزرار التصنيفات والفلترة -->
+        <!-- تصنيفات المنتجات -->
         <div class="filter-container">
             <button class="filter-btn active" data-category="all">الكل</button>
             <button class="filter-btn" data-category="languages">تعلم اللغات</button>
@@ -487,7 +546,9 @@
             <div class="card" data-category="ai-study">
                 <div class="card-badge">ذكاء اصطناعي</div>
                 <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" alt="Gemini Pro">
+                    <div class="icon-box">
+                        <img src="https://cdn.simpleicons.org/googlegemini/8E75FF" alt="Gemini Pro">
+                    </div>
                 </div>
                 <h3 class="card-title">Gemini Pro</h3>
                 <p class="card-desc">اشتراك كامل للذكاء الاصطناعي المتطور لمدة 18 شهراً.</p>
@@ -501,7 +562,9 @@
             <div class="card" data-category="ai-study">
                 <div class="card-badge">دراسة وتطوير</div>
                 <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-Logo_600x600.svg" alt="Coursera Plus">
+                    <div class="icon-box">
+                        <img src="https://cdn.simpleicons.org/coursera/0056D2" alt="Coursera Plus">
+                    </div>
                 </div>
                 <h3 class="card-title">Coursera Plus</h3>
                 <p class="card-desc">وصول غير محدود لجميع الدورات والشهادات المعتمدة لمدة 12 شهراً.</p>
@@ -515,7 +578,9 @@
             <div class="card" data-category="design">
                 <div class="card-badge">تصميم</div>
                 <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" alt="Canva Pro">
+                    <div class="icon-box">
+                        <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva Pro">
+                    </div>
                 </div>
                 <h3 class="card-title">Canva Pro</h3>
                 <p class="card-desc">تفعيل حسابك الشخصي بجميع القوالب والميزات الاحترافية المدفوعة.</p>
@@ -529,7 +594,9 @@
             <div class="card" data-category="entertainment">
                 <div class="card-badge">مشاهدة</div>
                 <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Netflix_icon.svg" alt="Netflix">
+                    <div class="icon-box">
+                        <img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix">
+                    </div>
                 </div>
                 <h3 class="card-title">Netflix Premium</h3>
                 <p class="card-desc">اشتراك شهري بجودة 4K Ultra HD لجميع الأفلام والمسلسلات (1 شهر).</p>
@@ -541,192 +608,4 @@
 
             <!-- 5. CapCut Pro -->
             <div class="card" data-category="design">
-                <div class="card-badge">مونتاج</div>
-                <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/CapCut_logo.png" alt="CapCut Pro">
-                </div>
-                <h3 class="card-title">CapCut Pro</h3>
-                <p class="card-desc">فتح جميع الفلاتر وتأثيرات الذكاء الاصطناعي للمونتاج الاحترافي (1 شهر).</p>
-                <div class="card-price">30 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20اشتراك%20CapCut%20Pro%20(شهر%20واحد)%20بسعر%2030%20درهم" target="_blank" class="btn-wa">
-                    <i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب
-                </a>
-            </div>
-
-            <!-- 6. LinkedIn Premium -->
-            <div class="card" data-category="ai-study">
-                <div class="card-badge">وظائف وأعمال</div>
-                <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn Premium">
-                </div>
-                <h3 class="card-title">LinkedIn Premium</h3>
-                <p class="card-desc">ترقية الحساب الاحترافي ورسائل InMail المباشرة للمسؤولين لمدة 3 أشهر.</p>
-                <div class="card-price">49 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20اشتراك%20LinkedIn%20Premium%20(3%20أشهر)%20بسعر%2049%20درهم" target="_blank" class="btn-wa">
-                    <i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب
-                </a>
-            </div>
-
-            <!-- 7. Autodesk Suite -->
-            <div class="card" data-category="engineering">
-                <div class="card-badge">برامج هندسية</div>
-                <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Autodesk_Logo_2021.svg" alt="Autodesk">
-                </div>
-                <h3 class="card-title">Autodesk (AutoCAD / 3D)</h3>
-                <p class="card-desc">ترخيص رسمي شامل لجميع حزمة برامج أوتوديسك الهندسية لمدة 3 سنوات.</p>
-                <div class="card-price">120 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20ترخيص%20Autodesk%20(3%20سنوات)%20بسعر%20120%20درهم" target="_blank" class="btn-wa">
-                    <i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب
-                </a>
-            </div>
-
-            <!-- 8. YouTube Premium -->
-            <div class="card" data-category="entertainment">
-                <div class="card-badge">تطبيقات Android</div>
-                <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube Premium">
-                </div>
-                <h3 class="card-title">YouTube Premium</h3>
-                <p class="card-desc">مشاهدة بدون إعلانات مع تشغيل في الخلفية وتنزيل الفيديوهات (Android).</p>
-                <div class="card-price">49 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20YouTube%20Premium%20(Android)%20بسعر%2049%20درهم" target="_blank" class="btn-wa">
-                    <i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب
-                </a>
-            </div>
-
-            <!-- 9. Duolingo -->
-            <div class="card" data-category="languages">
-                <div class="card-badge">تعلم لغات</div>
-                <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Duolingo_logo.svg" alt="Duolingo">
-                </div>
-                <h3 class="card-title">Duolingo Super / Max</h3>
-                <p class="card-desc">قلوب غير محدودة وميزات الذكاء الاصطناعي (Super بـ 49 DH / Max بـ 79 DH).</p>
-                <div class="card-price">49 / 79 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20اشتراك%20Duolingo%20(Android)" target="_blank" class="btn-wa">
-                    <i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب
-                </a>
-            </div>
-
-            <!-- 10. Rosetta Stone -->
-            <div class="card" data-category="languages">
-                <div class="card-badge">تعلم لغات</div>
-                <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Rosetta_Stone_logo.png" alt="Rosetta Stone">
-                </div>
-                <h3 class="card-title">Rosetta Stone</h3>
-                <p class="card-desc">تطبيق تعلم اللغات الأشهر لجميع المستويات والقواعد (Android).</p>
-                <div class="card-price">69 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20Rosetta%20Stone%20(Android)%20بسعر%2069%20درهم" target="_blank" class="btn-wa">
-                    <i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب
-                </a>
-            </div>
-
-            <!-- 11. Busuu -->
-            <div class="card" data-category="languages">
-                <div class="card-badge">تعلم لغات</div>
-                <div class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Busuu_Logo.svg" alt="Busuu">
-                </div>
-                <h3 class="card-title">Busuu Premium</h3>
-                <p class="card-desc">فتح جميع المستويات والدروس التفاعلية مع شهادات إتمام (Android).</p>
-                <div class="card-price">69 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20Busuu%20Premium%20(Android)%20بسعر%2069%20درهم" target="_blank" class="btn-wa">
-                    <i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب
-                </a>
-            </div>
-
-        </div>
-
-        <!-- قسم طرق الدفع المقبولة -->
-        <div class="payments-bar">
-            <h3><i class="fa-solid fa-credit-card"></i> طرق الدفع المقبولة</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">نوفر لك طرق دفع سهلة وآمنة تناسبك داخل المغرب وخارجه</p>
-            <div class="payments-list">
-                <div class="payment-tag"><i class="fa-solid fa-building-columns"></i> CIH Bank</div>
-                <div class="payment-tag"><i class="fa-solid fa-building-columns"></i> Attijariwafa Bank</div>
-                <div class="payment-tag"><i class="fa-solid fa-building-columns"></i> Barid Bank</div>
-                <div class="payment-tag"><i class="fa-solid fa-money-bill-transfer"></i> Cash Plus</div>
-                <div class="payment-tag"><i class="fa-brands fa-paypal"></i> PayPal</div>
-            </div>
-        </div>
-
-        <!-- قسم آراء الزبائن -->
-        <h2 class="section-title"><i class="fa-solid fa-star"></i> آراء بعض الزبائن</h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">ياسين .م</span>
-                    <span class="review-stars">★★★★★</span>
-                </div>
-                <p class="review-text">"خدمة سريعة جداً، أخذت حساب Coursera Plus وتم التفعيل في أقل من 5 دقائق. شكراً لكم!"</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">سارة .ب</span>
-                    <span class="review-stars">★★★★★</span>
-                </div>
-                <p class="review-text">"اشتراك Canva Pro شغال 100% على إيميلي الخاص وبسعر رمزي جداً مقارنة بالسعر الأصلي."</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-name">حمزة .ع</span>
-                    <span class="review-stars">★★★★★</span>
-                </div>
-                <p class="review-text">"تعامل محترم ودعم فني متجاوب على الواتساب. أنصح بالتعامل مع DigiSou9 بشدة."</p>
-            </div>
-        </div>
-
-        <!-- قسم الأسئلة الشائعة FAQ -->
-        <h2 class="section-title"><i class="fa-solid fa-circle-question"></i> الأسئلة الشائعة</h2>
-        <div class="faq-list">
-            <details class="faq-item">
-                <summary>كيف استلم الحساب أو التفعيل بعد الدفع؟</summary>
-                <p>يتم إرسال بيانات الحساب أو رابط التفعيل فوراً عبر محادثة الواتساب بعد تأكيد عملية الدفع مباشرة.</p>
-            </details>
-            <details class="faq-item">
-                <summary>هل توجد مدة ضمان على الاشتراكات؟</summary>
-                <p>نعم، نقدم ضماناً كاملاً طوال مدة الاشتراك المحددة مع استبدال فوري أو حل لأي مشكلة تقنية تواجهك.</p>
-            </details>
-            <details class="faq-item">
-                <summary>هل الحسابات مفعلة على إيميلي الشخصي أم حساب جديد؟</summary>
-                <p>بعض الخدمات مثل Canva تفعل مباشرة على بريدك الإلكتروني، وخدمات أخرى نوفر لك فيها حساباً خاصاً بك وجاهزاً للاستخدام.</p>
-            </details>
-        </div>
-
-    </main>
-
-    <footer class="container">
-        <p>© 2026 DigiSou9 - جميع الحقوق محفوظة</p>
-        <a href="https://facebook.com" target="_blank" class="social-link">
-            <i class="fa-brands fa-facebook"></i> تابعنا على فيسبوك
-        </a>
-    </footer>
-
-    <!-- سكربت فلترة التصنيفات التفاعلي -->
-    <script>
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('.card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const selectedCategory = btn.getAttribute('data-category');
-
-                cards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-                    if (selectedCategory === 'all' || cardCategory === selectedCategory) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
-
-</body>
-</html>
+                <div class="card-
