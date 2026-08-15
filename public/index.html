@@ -6,20 +6,24 @@
     <title>DigiSou9 - متجرك الأول للمنتجات والخدمات الرقمية</title>
     <meta name="description" content="متجر DigiSou9 للحصول على الاشتراكات والبرامج الرقمية بأفضل الأسعار مع تسليم فوري وضمان كامل.">
     
-    <!-- إثبات ملكية Google Search Console -->
+    <!-- أيقونة الموقع في المتصفح (Favicon) -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- كود إثبات ملكية Google Search Console -->
     <meta name="google-site-verification" content="gJY16M3anlw16iB2EkpVIADuM0FuFVeP9CmYrkwJcXs" />
 
-    <!-- Open Graph للمعاينة عند المشاركة -->
+    <!-- معاينة الروابط عند المشاركة (Open Graph) -->
     <meta property="og:title" content="DigiSou9 - المتجر الرقمي الشامل">
     <meta property="og:description" content="اشتراكات برامج وتطبيقات أصلية بأفضل الأسعار وضمان كامل طوال المدة.">
+    <meta property="og:image" content="banner.png">
     <meta property="og:type" content="website">
 
-    <!-- خط Cairo -->
+    <!-- خط Cairo من Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- أيقونات FontAwesome -->
+    <!-- مكتبة أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -57,31 +61,56 @@
             margin: 0 auto;
         }
 
-        /* رأس الصفحة */
+        /* رأس الصفحة (Header) */
         header {
             text-align: center;
-            padding: 45px 20px 25px;
+            padding: 35px 20px 20px;
         }
 
-        .logo-title {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: var(--primary);
+        .logo-wrapper {
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            margin-bottom: 12px;
+        }
+
+        .site-logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .site-title {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .banner-wrapper {
+            margin: 15px auto 25px;
+            max-width: 950px;
+        }
+
+        .hero-banner {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--border-color);
+            display: block;
         }
 
         .subtitle {
             color: var(--text-muted);
-            font-size: 1.15rem;
-            max-width: 650px;
+            font-size: 1.1rem;
+            max-width: 680px;
             margin: 0 auto 25px;
         }
 
-        /* مميزات المتجر */
+        /* شريط مميزات المتجر */
         .trust-bar {
             display: flex;
             justify-content: center;
@@ -117,7 +146,7 @@
             gap: 10px;
         }
 
-        /* أزرار الفلترة */
+        /* أزرار الفلترة والتصنيف */
         .filter-container {
             display: flex;
             justify-content: center;
@@ -244,7 +273,7 @@
             transform: scale(1.02);
         }
 
-        /* طرق الدفع */
+        /* قسم طرق الدفع */
         .payments-bar {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -274,7 +303,7 @@
             gap: 8px;
         }
 
-        /* آراء الزبائن */
+        /* قسم آراء الزبائن */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -311,7 +340,7 @@
             font-size: 0.9rem;
         }
 
-        /* الأسئلة الشائعة */
+        /* قسم الأسئلة الشائعة FAQ */
         .faq-list {
             max-width: 800px;
             margin: 0 auto 50px;
@@ -417,26 +446,20 @@
     </a>
 
     <header class="container">
-    <!-- صورة البانر الترويجي -->
-    <div class="banner-wrapper">
-        <img src="banner.png" alt="DigiSou9 Banner" class="hero-banner">
-    </div>
-
-    <p class="subtitle">متجرك الرقمي المتكامل لجميع الاشتراكات والبرامج والتطبيقات الاحترافية بأفضل الأسعار مع تسليم فوري وضمان كامل.</p>
-
-    <div class="trust-bar">
-        <div class="trust-item"><i class="fa-solid fa-bolt"></i> تسليم وتفعيل فوري</div>
-        <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> ضمان كامل طوال المدة</div>
-        <div class="trust-item"><i class="fa-solid fa-headset"></i> دعم فني متاح 24/7</div>
-    </div>
-</header>
-
-
-        <div class="logo-title">
-            <i class="fa-solid fa-cart-shopping"></i> DigiSou9
+        <!-- اللوغو والعنوان -->
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="DigiSou9 Logo" class="site-logo" onerror="this.style.display='none'">
+            <h1 class="site-title">DigiSou9</h1>
         </div>
+
+        <!-- صورة البانر الرئيسي -->
+        <div class="banner-wrapper">
+            <img src="banner.png" alt="DigiSou9 Banner" class="hero-banner" onerror="this.style.display='none'">
+        </div>
+
         <p class="subtitle">متجرك الرقمي المتكامل لجميع الاشتراكات والبرامج والتطبيقات الاحترافية بأفضل الأسعار مع تسليم فوري وضمان كامل.</p>
 
+        <!-- شريط المميزات -->
         <div class="trust-bar">
             <div class="trust-item"><i class="fa-solid fa-bolt"></i> تسليم وتفعيل فوري</div>
             <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> ضمان كامل طوال المدة</div>
@@ -448,7 +471,7 @@
         
         <h2 class="section-title"><i class="fa-solid fa-fire"></i> العروض والاشتراكات المتاحة</h2>
 
-        <!-- أزرار التصنيفات -->
+        <!-- أزرار التصنيفات والفلترة -->
         <div class="filter-container">
             <button class="filter-btn active" data-category="all">الكل</button>
             <button class="filter-btn" data-category="languages">تعلم اللغات</button>
@@ -616,7 +639,7 @@
 
         </div>
 
-        <!-- طرق الدفع -->
+        <!-- قسم طرق الدفع المقبولة -->
         <div class="payments-bar">
             <h3><i class="fa-solid fa-credit-card"></i> طرق الدفع المقبولة</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">نوفر لك طرق دفع سهلة وآمنة تناسبك داخل المغرب وخارجه</p>
@@ -629,7 +652,7 @@
             </div>
         </div>
 
-        <!-- آراء الزبائن -->
+        <!-- قسم آراء الزبائن -->
         <h2 class="section-title"><i class="fa-solid fa-star"></i> آراء بعض الزبائن</h2>
         <div class="reviews-grid">
             <div class="review-card">
@@ -655,7 +678,7 @@
             </div>
         </div>
 
-        <!-- الأسئلة الشائعة -->
+        <!-- قسم الأسئلة الشائعة FAQ -->
         <h2 class="section-title"><i class="fa-solid fa-circle-question"></i> الأسئلة الشائعة</h2>
         <div class="faq-list">
             <details class="faq-item">
@@ -681,7 +704,7 @@
         </a>
     </footer>
 
-    <!-- سكربت فلترة التصنيفات -->
+    <!-- سكربت فلترة التصنيفات التفاعلي -->
     <script>
         const filterBtns = document.querySelectorAll('.filter-btn');
         const cards = document.querySelectorAll('.card');
@@ -707,4 +730,3 @@
 
 </body>
 </html>
-
