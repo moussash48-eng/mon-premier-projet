@@ -2,9 +2,15 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
+// هاد السطر كيخدم الملفات اللي فـ public
 app.use(express.static(path.join(__dirname, 'public')));
+
+// هاد السطر كيضمن بلي أي واحد دخل للسيت، السيرفر يلوح ليه index.html اللي فـ public
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // قائمة المنتجات الرقمية
 const products = [
@@ -13,11 +19,10 @@ const products = [
     { id: 3, title: 'حزمة البرامج والتطبيقات', description: 'تطبيقات مونتاج وتعديل صور مثل Filmora HD وغيرها.', price: 49 }
 ];
 
-// رابط الـ API للجلب
 app.get('/api/products', (req, res) => {
     res.json(products);
 });
 
 app.listen(PORT, () => {
-    console.log("Serveur lancé sur http://localhost:" + PORT);
+    console.log("Serveur lancé sur port " + PORT);
 });
