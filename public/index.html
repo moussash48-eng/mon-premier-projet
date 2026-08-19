@@ -609,3 +609,84 @@
             <!-- 5. CapCut Pro -->
             <div class="card" data-category="design">
                 <div class="card-
+         badge">مونتاج</div>
+                <div class="card-icon">
+                    <div class="icon-box">
+                        <img src="https://cdn.simpleicons.org/capcut/FFFFFF" alt="CapCut Pro">
+                    </div>
+                </div>
+                <h3 class="card-title">CapCut Pro</h3>
+                <p class="card-desc">تفعيل ميزات المونتاج الاحترافية وإزالة العلامة المائية بالكامل.</p>
+                <div class="card-price">39 <span>درهم</span></div>
+                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20اشتراك%20CapCut%20Pro%20بسعر%2039%20درهم" target="_blank" class="btn-wa">
+                    <i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب
+                </a>
+            </div>
+
+        </div> <!-- نهاية شبكة المنتجات (grid) -->
+
+        <!-- قسم طرق الدفع -->
+        <div class="payments-bar">
+            <h3>💳 طرق الدفع المتوفرة</h3>
+            <div class="payments-list">
+                <div class="payment-tag"><i class="fa-solid fa-building-columns"></i> CIH Bank</div>
+                <div class="payment-tag"><i class="fa-solid fa-money-bill-transfer"></i> Barid Bank</div>
+                <div class="payment-tag"><i class="fa-brands fa-paypal"></i> PayPal</div>
+                <div class="payment-tag"><i class="fa-solid fa-wallet"></i> Cash Plus</div>
+            </div>
+        </div>
+
+        <!-- قسم الأسئلة الشائعة -->
+        <h2 class="section-title"><i class="fa-solid fa-circle-question"></i> الأسئلة الشائعة</h2>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>كيفاش غنستلم الطلب ديالي؟</summary>
+                <p>بمجرد تأكيد الدفع، غنصيفطو ليك معلومات الحساب أو كود التفعيل مباشرة فـ الواتساب.</p>
+            </details>
+            <details class="faq-item">
+                <summary>شحال ديال الوقت كياخد التسليم؟</summary>
+                <p>التسليم كيكون فوري (من 5 دقايق حتى لـ 30 دقيقة كحد أقصى) خلال أوقات العمل.</p>
+            </details>
+            <details class="faq-item">
+                <summary>واش كاين ضمان على الاشتراكات؟</summary>
+                <p>أكيد! كنعطيوك ضمان كامل على المدة ديال الاشتراك اللي شريتي من عندنا، وفي حالة وقع أي مشكل كنعوضوك فالبلاصة.</p>
+            </details>
+        </div>
+
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 DigiSou9</p>
+        <a href="https://instagram.com/digisou9" target="_blank" class="social-link">
+            <i class="fa-brands fa-instagram"></i> تابعنا على انستغرام
+        </a>
+    </footer>
+
+    <!-- سكريبت بسيط باش يخدمو أزرار الفلتر ديال التصنيفات -->
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // نحيدو الكلاس active من كلشي ونزيدوه للي كليكينا عليه
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+
+                // نبينو أو نخفيو المنتجات على حساب الكاتيغوري
+                cards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>           
