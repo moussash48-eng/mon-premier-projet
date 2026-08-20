@@ -1,56 +1,58 @@
-// ==========================================
-// 1. نظام تصفية المنتجات (Categories Filter)
-// ==========================================
+// مصفوفة المنتجات الرقمية الخاصة بـ DigiSou9
+const products = [
+    {
+        id: 1,
+        name: "Canva Pro",
+        description: "اشتراك رسمي تفعيل فوري على حسابك الشخصي.",
+        price: "49 درهم"
+    },
+    {
+        id: 2,
+        name: "Duolingo Premium",
+        description: "تعلم اللغات بدون إعلانات وبمميزات كاملة.",
+        price: "99 درهم"
+    },
+    {
+        id: 3,
+        name: "Filmora HD",
+        description: "تفعيل رسمي لبرنامج المونتاج الشهير.",
+        price: "99 درهم"
+    }
+];
 
-// كنجيبو ڭاع الأزرار ديال الفلتر والبطاقات ديال المنتجات
-const filterBtns = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.card');
-
-// كنديرو حلقة (loop) على كل زر باش نتصنتو للضغطة عليه
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // نحيدو الكلاس 'active' من ڭاع الأزرار
-        filterBtns.forEach(b => b.classList.remove('active'));
-        // ونزيدوه غير للزر اللي كليكينا عليه باش يبان مضوي
-        btn.classList.add('active');
-
-        // كنجيبو السمية ديال الكاتيغوري من الزر اللي تبرك عليه
-        const category = btn.getAttribute('data-category');
-
-        // كندورو على البطاقات كاملين
-        cards.forEach(card => {
-            // إلا كانت الكاتيغوري هي 'all' أو كطابق الكاتيغوري ديال البطاقة، كنبينوها
-            if (category === 'all' || card.getAttribute('data-category') === category) {
-                card.style.display = 'flex';
-            } else {
-                // وإلا، كنخفيوها
-                card.style.display = 'none';
-            }
-        });
-    });
-});
-
-// ==========================================
-// 2. نظام نسخ رقم الحساب البنكي (Copy RIB)
-// ==========================================
-
-function copyRib() {
-    // كنجيبو النص اللي فيه رقم الحساب (تأكد أن الـ ID ديالو فالـ HTML هو cih-number)
-    let ribText = document.getElementById("cih-number").innerText;
+// دالة عرض المنتجات في الصفحة
+function renderProducts() {
+    const grid = document.getElementById('productsGrid');
+    if (!grid) return; // تأكد أن العنصر موجود
     
-    // كنسخوه للحافظة (Clipboard)
-    navigator.clipboard.writeText(ribText).then(() => {
+    grid.innerHTML = ""; // تفريغ الشبكة أولاً
+
+    products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
         
-        // كنجيبو الإشعار (Toast) ونزيدو ليه كلاس 'show' باش يبان
-        let toast = document.getElementById("toast");
-        toast.classList.add("show");
+        card.innerHTML = `
+            <div>
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-desc">${product.description}</p>
+            </div>
+            <div class="product-footer">
+                <span class="product-price">${product.price}</span>
+                <button class="buy-btn" onclick="buyProduct('${product.name}')">اطلب الان</button>
+            </div>
+        `;
         
-        // كنحيدو كلاس 'show' من بعد 3 ثواني باش يتخبع بوحدو
-        setTimeout(function() {
-            toast.classList.remove("show");
-        }, 3000);
-    }).catch(err => {
-        console.error("فشل نسخ النص: ", err);
-        alert("وقع مشكل فالنسخ، عافاك كوبيه يدويا.");
+        grid.appendChild(card);
     });
 }
+
+// دالة تحويل الزبون إلى الواتساب مباشرة
+function buyProduct(productName) {
+    const phone = "212600000000"; // استبدل برقم هاتفك الخاص بـ WhatsApp Business
+    const message = `سلام، بغيت نشري منتج: ${productName} من متجر DigiSou9`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+// تشغيل الدالة عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', renderProducts);
