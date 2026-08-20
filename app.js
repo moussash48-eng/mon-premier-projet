@@ -1,28 +1,28 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// هاد السطر كيخدم الملفات اللي فـ public
+// السماح بقراءة البيانات المتبادلة (CORS) إن احتجت لها
+const cors = require('cors');
+app.use(cors());
+
+// هاد السيرفر كيقول ليه: قرأ الملفات الثابتة (HTML, CSS, JS) من مجلد public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// هاد السطر كيضمن بلي أي واحد دخل للسيت، السيرفر يلوح ليه index.html اللي فـ public
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// قائمة المنتجات الرقمية
+// قاعدة بيانات مؤقتة للمنتجات (API)
 const products = [
-    { id: 1, title: 'حزمة أدوات التصميم والتكاوين', description: 'ملفات جاهزة وقوالب تصاميم احترافية لعملك.', price: 49 },
-    { id: 2, title: 'حساب تعليمي مميز (Duolingo)', description: 'اشتراك تعلم اللغات مع كامل المميزات المدفوعة.', price: 49 },
-    { id: 3, title: 'حزمة البرامج والتطبيقات', description: 'تطبيقات مونتاج وتعديل صور مثل Filmora HD وغيرها.', price: 49 }
+    { id: 1, name: "Canva Pro", description: "اشتراك رسمي تفعيل فوري.", price: "49 درهم" },
+    { id: 2, name: "Duolingo Premium", description: "تعلم اللغات بدون إعلانات.", price: "99 درهم" },
+    { id: 3, name: "Filmora HD", description: "تفعيل رسمي للمونتاج.", price: "99 درهم" }
 ];
 
+// الـ Route ديال المنتجات
 app.get('/api/products', (req, res) => {
     res.json(products);
 });
 
+// تشغيل السيرفر
 app.listen(PORT, () => {
-    console.log("Serveur lancé sur port " + PORT);
+    console.log(`Server is running on port ${PORT}`);
 });
