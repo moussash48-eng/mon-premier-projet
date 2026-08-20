@@ -1,31 +1,17 @@
-// مصفوفة المنتجات الرقمية الخاصة بـ DigiSou9
-const products = [
-    {
-        id: 1,
-        name: "Canva Pro",
-        description: "اشتراك رسمي تفعيل فوري على حسابك الشخصي.",
-        price: "49 درهم"
-    },
-    {
-        id: 2,
-        name: "Duolingo Premium",
-        description: "تعلم اللغات بدون إعلانات وبمميزات كاملة.",
-        price: "99 درهم"
-    },
-    {
-        id: 3,
-        name: "Filmora HD",
-        description: "تفعيل رسمي لبرنامج المونتاج الشهير.",
-        price: "99 درهم"
+async function fetchProducts() {
+    try {
+        const response = await fetch('/api/products');
+        const products = await response.json();
+        renderProducts(products);
+    } catch (error) {
+        console.error("خطأ في جلب المنتجات:", error);
     }
-];
+}
 
-// دالة عرض المنتجات في الصفحة
-function renderProducts() {
+function renderProducts(products) {
     const grid = document.getElementById('productsGrid');
-    if (!grid) return; // تأكد أن العنصر موجود
-    
-    grid.innerHTML = ""; // تفريغ الشبكة أولاً
+    if (!grid) return;
+    grid.innerHTML = ""; 
 
     products.forEach(product => {
         const card = document.createElement('div');
@@ -41,18 +27,15 @@ function renderProducts() {
                 <button class="buy-btn" onclick="buyProduct('${product.name}')">اطلب الان</button>
             </div>
         `;
-        
         grid.appendChild(card);
     });
 }
 
-// دالة تحويل الزبون إلى الواتساب مباشرة
 function buyProduct(productName) {
-    const phone = "212600000000"; // استبدل برقم هاتفك الخاص بـ WhatsApp Business
+    const phone = "212600000000"; // استبدل برقم الواتساب الخاص بك
     const message = `سلام، بغيت نشري منتج: ${productName} من متجر DigiSou9`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
 
-// تشغيل الدالة عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', renderProducts);
+document.addEventListener('DOMContentLoaded', fetchProducts);
