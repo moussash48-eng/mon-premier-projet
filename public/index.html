@@ -1,175 +1,80 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiSou9 - متجرك الأول للمنتجات والخدمات الرقمية</title>
-    <meta name="description" content="متجر DigiSou9 للحصول على الاشتراكات والبرامج الرقمية بأفضل الأسعار مع تسليم فوري وضمان كامل.">
-    
-    <!-- أيقونة الموقع في المتصفح -->
-    <link rel="icon" type="image/png" href="logo.png">
-
-    <!-- كود إثبات ملكية Google Search Console -->
-    <meta name="google-site-verification" content="gJY16M3anlw16iB2EkpVIADuM0FuFVeP9CmYrkwJcXs" />
-
-    <!-- Open Graph للمعاينة عند المشاركة -->
-    <meta property="og:title" content="DigiSou9 - المتجر الرقمي الشامل">
-    <meta property="og:description" content="اشتراكات برامج وتطبيقات أصلية بأفضل الأسعار وضمان كامل طوال المدة.">
-    <meta property="og:image" content="banner.png">
-    <meta property="og:type" content="website">
-
-    <!-- خط Cairo -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- أيقونات FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <link rel="stylesheet" href="style.css">  
-</head>
-<body>
-
-    <!-- زر واتساب العائم -->
-    <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20عروض%20DigiSou9" target="_blank" class="floating-wa" title="تواصل معنا عبر واتساب">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <header class="container">
-        <!-- اللوغو والعنوان -->
-        <div class="logo-wrapper">
-            <img src="logo.png" alt="DigiSou9 Logo" class="site-logo" onerror="this.src='https://cdn.simpleicons.org/shopify/00d2ff'">
-            <h1 class="site-title">DigiSou9</h1>
+<!-- قسم عرض المنتجات -->
+<section class="products-section">
+    <div class="container">
+        <h2>المنتجات الرقمية المتوفرة</h2>
+        <div class="products-grid" id="productsGrid">
+            <!-- سيتم تعبئة هذه البطاقات ديناميكياً عبر الجافاسكريبت -->
         </div>
+    </div>
+</section>
 
-        <!-- البانر الترويجي -->
-        <div class="banner-wrapper">
-            <img src="banner.png" alt="DigiSou9 Banner" class="hero-banner">
-        </div>
-
-        <p class="subtitle">متجرك الرقمي المتكامل لجميع الاشتراكات والبرامج والتطبيقات الاحترافية بأفضل الأسعار مع تسليم فوري وضمان كامل.</p>
-
-        <div class="trust-bar">
-            <div class="trust-item"><i class="fa-solid fa-bolt"></i> تسليم وتفعيل فوري</div>
-            <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> ضمان كامل طوال المدة</div>
-            <div class="trust-item"><i class="fa-solid fa-headset"></i> دعم فني متاح 24/7</div>
-        </div>
-    </header>
-
-    <main class="container">
-        
-        <h2 class="section-title"><i class="fa-solid fa-fire"></i> العروض والاشتراكات المتاحة</h2>
-
-        <!-- تصنيفات المنتجات -->
-        <div class="filter-container">
-            <button class="filter-btn active" data-category="all">الكل</button>
-            <button class="filter-btn" data-category="languages">تعلم اللغات</button>
-            <button class="filter-btn" data-category="design">التصميم والمونتاج</button>
-            <button class="filter-btn" data-category="ai-study">الذكاء الاصطناعي والدراسة</button>
-            <button class="filter-btn" data-category="entertainment">الترفيه والمشاهدة</button>
-            <button class="filter-btn" data-category="engineering">البرامج الهندسية</button>
-        </div>
-
-        <div class="grid">
-            <!-- 1. Gemini Pro -->
-            <div class="card" data-category="ai-study">
-                <div class="card-badge">ذكاء اصطناعي</div>
-                <div class="card-icon"><div class="icon-box"><img src="https://cdn.simpleicons.org/googlegemini/8E75FF" alt="Gemini Pro"></div></div>
-                <h3 class="card-title">Gemini Pro</h3>
-                <p class="card-desc">اشتراك كامل للذكاء الاصطناعي المتطور لمدة 18 شهراً.</p>
-                <div class="card-price">49 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20اشتراك%20Gemini%20Pro%20(18%20شهر)%20بسعر%2049%20درهم" target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب</a>
-            </div>
-
-            <!-- 2. Coursera Plus -->
-            <div class="card" data-category="ai-study">
-                <div class="card-badge">دراسة وتطوير</div>
-                <div class="card-icon"><div class="icon-box"><img src="https://cdn.simpleicons.org/coursera/0056D2" alt="Coursera Plus"></div></div>
-                <h3 class="card-title">Coursera Plus</h3>
-                <p class="card-desc">وصول غير محدود لجميع الدورات والشهادات المعتمدة لمدة 12 شهراً.</p>
-                <div class="card-price">49 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20اشتراك%20Coursera%20Plus%20(12%20شهر)%20بسعر%2049%20درهم" target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب</a>
-            </div>
-
-            <!-- 3. Canva Pro -->
-            <div class="card" data-category="design">
-                <div class="card-badge">تصميم</div>
-                <div class="card-icon"><div class="icon-box"><img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva Pro"></div></div>
-                <h3 class="card-title">Canva Pro</h3>
-                <p class="card-desc">تفعيل حسابك الشخصي بجميع القوالب والميزات الاحترافية المدفوعة.</p>
-                <div class="card-price">15 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20اشتراك%20Canva%20Pro%20بسعر%2015%20درهم" target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب</a>
-            </div>
-
-            <!-- 4. Netflix -->
-            <div class="card" data-category="entertainment">
-                <div class="card-badge">مشاهدة</div>
-                <div class="card-icon"><div class="icon-box"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix"></div></div>
-                <h3 class="card-title">Netflix Premium</h3>
-                <p class="card-desc">اشتراك شهري بجودة 4K Ultra HD لجميع الأفلام والمسلسلات (1 شهر).</p>
-                <div class="card-price">39 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20اشتراك%20Netflix%20(شهر%20واحد)%20بسعر%2039%20درهم" target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب</a>
-            </div>
-
-            <!-- 5. CapCut Pro -->
-            <div class="card" data-category="design">
-                <div class="card-badge">مونتاج</div>
-                <div class="card-icon"><div class="icon-box"><img src="https://cdn.simpleicons.org/capcut/FFFFFF" alt="CapCut Pro"></div></div>
-                <h3 class="card-title">CapCut Pro</h3>
-                <p class="card-desc">تفعيل ميزات المونتاج الاحترافية وإزالة العلامة المائية بالكامل.</p>
-                <div class="card-price">39 <span>درهم</span></div>
-                <a href="https://wa.me/212718049282?text=السلام%20عليكم،%20أريد%20طلب%20اشتراك%20CapCut%20Pro%20بسعر%2039%20درهم" target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> طلب عبر واتساب</a>
-            </div>
-        </div> 
-
-        <!-- قسم طرق الدفع (هنا فين زدنا زر النسخ) -->
-        <div class="payments-bar">
-            <h3>💳 الدفع عبر حساب CIH</h3>
-            
-            <div class="bank-account-box">
-                <span id="cih-number">230 330 123456789 12</span>
-                <button onclick="copyRib()" class="copy-btn">
-                    <i class="fa-solid fa-copy"></i> نسخ
-                </button>
-            </div>
-
-            <div class="payments-list" style="margin-top: 25px;">
-                <div class="payment-tag"><i class="fa-solid fa-money-bill-transfer"></i> Barid Bank</div>
-                <div class="payment-tag"><i class="fa-brands fa-paypal"></i> PayPal</div>
-                <div class="payment-tag"><i class="fa-solid fa-wallet"></i> Cash Plus</div>
-            </div>
-        </div>
-
-        <!-- التوست (Toast) للإشعار ملي كيتنسخ الرقم -->
-        <div id="toast" class="toast"><i class="fa-solid fa-circle-check"></i> تم نسخ رقم الحساب بنجاح!</div>
-
-        <!-- قسم الأسئلة الشائعة -->
-        <h2 class="section-title"><i class="fa-solid fa-circle-question"></i> الأسئلة الشائعة</h2>
-        <div class="faq-list">
-            <details class="faq-item">
-                <summary>كيفاش غنستلم الطلب ديالي؟</summary>
-                <p>بمجرد تأكيد الدفع، غنصيفطو ليك معلومات الحساب أو كود التفعيل مباشرة فـ الواتساب.</p>
-            </details>
-            <details class="faq-item">
-                <summary>شحال ديال الوقت كياخد التسليم؟</summary>
-                <p>التسليم كيكون فوري (من 5 دقايق حتى لـ 30 دقيقة كحد أقصى) خلال أوقات العمل.</p>
-            </details>
-            <details class="faq-item">
-                <summary>واش كاين ضمان على الاشتراكات؟</summary>
-                <p>أكيد! كنعطيوك ضمان كامل على المدة ديال الاشتراك اللي شريتي من عندنا، وفي حالة وقع أي مشكل كنعوضوك فالبلاصة.</p>
-            </details>
-        </div>
-    </main>
-
-    <!-- الفوتر -->
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 DigiSou9</p>
-        <a href="https://instagram.com/digisou9" target="_blank" class="social-link">
-            <i class="fa-brands fa-instagram"></i> تابعنا على انستغرام
-        </a>
-    </footer>
-
-    <!-- رابط ملف الجافاسكريبت اللي صاوبتي -->
-    <script src="script.js"></script>
-</body>
-</html>
+<style>
+  .products-section {
+      padding: 40px 20px;
+      background-color: #f8f9fa;
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+  }
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  .products-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+  }
+  .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+  }
+  .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  .product-card:hover {
+      transform: translateY(-5px);
+  }
+  .product-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 10px;
+  }
+  .product-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 15px;
+  }
+  .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+  }
+  .product-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #27ae60;
+  }
+  .buy-btn {
+      background-color: #25d366; /* لون الواتساب لاختصار الطريق للزبون */
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+  }
+  .buy-btn:hover {
+      background-color: #1ebe57;
+  }
+</style>
