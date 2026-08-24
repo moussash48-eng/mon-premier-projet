@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigiSou9 | المتجر الرقمي الأول للاشتراكات والبرمجيات</title>
+    
     <!-- استدعاء خط Cairo الاحترافي -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <!-- استدعاء ملف الـ CSS الخارجي عبر Flask -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- استدعاء ملف الـ CSS الخارجي مباشرة -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -75,8 +77,8 @@
         &copy; 2026 DigiSou9. جميع الحقوق محفوظة لمتجرك الرقمي.
     </footer>
 
-    <!-- استدعاء ملف الجافاسكريبت عبر Flask -->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- استدعاء ملف الجافاسكريبت مباشرة -->
+    <script src="script.js"></script>
 
 </body>
 </html>
