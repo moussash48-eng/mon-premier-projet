@@ -1,41 +1,20 @@
-async function fetchProducts() {
-    try {
-        const response = await fetch('/api/products');
-        const products = await response.json();
-        renderProducts(products);
-    } catch (error) {
-        console.error("خطأ في جلب المنتجات:", error);
-    }
-}
+// جلب كاع الأزرار ديال الشراء من الصفحة
+const buyButtons = document.querySelectorAll('.btn-buy');
 
-function renderProducts(products) {
-    const grid = document.getElementById('productsGrid');
-    if (!grid) return;
-    grid.innerHTML = ""; 
+// إضافة حدث النقر لكل بوطونة
+buyButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        // جبدنا سمية المنتج اللي كاين في نفس الكارت
+        const productCard = event.target.closest('.product-card');
+        const productName = productCard.querySelector('h3').textContent;
+        const productPrice = productCard.querySelector('.price').textContent;
 
-    products.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
+        // رسالة تأكيد للمستخدم (يمكننا نربطوها مع WhatsApp مستقبلاً)
+        alert(`مرحباً! لقد اخترت: "${productName}" بثمن ${productPrice}.\nسيتم توجيهك لإتمام الطلب عبر واتساب.`);
         
-        card.innerHTML = `
-            <div>
-                <h3 class="product-title">${product.name}</h3>
-                <p class="product-desc">${product.description}</p>
-            </div>
-            <div class="product-footer">
-                <span class="product-price">${product.price}</span>
-                <button class="buy-btn" onclick="buyProduct('${product.name}')">اطلب الان</button>
-            </div>
-        `;
-        grid.appendChild(card);
+        // هنا نقدروا نزيدو اللوجيك ديال إضافة المنتج للـ LocalStorage أو إرساله لـ Node.js
     });
-}
+});
 
-function buyProduct(productName) {
-    const phone = "212600000000"; // استبدل برقم الواتساب الخاص بك
-    const message = `سلام، بغيت نشري منتج: ${productName} من متجر DigiSou9`;
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-}
-
-document.addEventListener('DOMContentLoaded', fetchProducts);
+// رسالة ترحيبية في الكونسول للتأكد من اشتغال الملف
+console.log("DigiSou9 JavaScript is loaded successfully! 🚀");
