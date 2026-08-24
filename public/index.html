@@ -3,179 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiSou9 | المتجر الرقمي الأول لاشتراكات والبرمجيات</title>
+    <title>DigiSou9 | المتجر الرقمي الأول للاشتراكات والبرمجيات</title>
+    <!-- استدعاء خط Cairo الاحترافي -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4F46E5; /* بنفَسجي تقني */
-            --accent-color: #10B981; /* أخضر للإيمانيات والثقة */
-            --bg-color: #F3F4F6;
-            --text-main: #1F2937;
-        }
-
-        * {
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-        }
-
-        /* النافبار */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--primary-color);
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        .nav-cart {
-            background: var(--primary-color);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-
-        .nav-cart:hover {
-            background: #4338CA;
-        }
-
-        /* الهيرو / الواجهة الرئيسية */
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #4F46E5 0%, #312E81 100%);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #E0E7FF;
-            margin-bottom: 30px;
-        }
-
-        /* شبكة المنتجات الرقمية */
-        .products-section {
-            padding: 60px 8%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: var(--text-main);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            border: 1px solid #E5E7EB;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        }
-
-        .product-tag {
-            background: #EEF2FF;
-            color: var(--primary-color);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            align-self: flex-start;
-            margin-bottom: 12px;
-        }
-
-        .product-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .product-card p {
-            font-size: 0.9rem;
-            color: #6B7280;
-            margin-bottom: 20px;
-        }
-
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .price {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--accent-color);
-        }
-
-        .btn-buy {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-buy:hover {
-            background-color: #4338CA;
-        }
-
-        /* الفوتر */
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #1F2937;
-            color: #9CA3AF;
-            font-size: 0.9rem;
-            margin-top: 60px;
-        }
-    </style>
+    <!-- استدعاء ملف الـ CSS الخارجي عبر Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -242,6 +74,8 @@
     <footer>
         &copy; 2026 DigiSou9. جميع الحقوق محفوظة لمتجرك الرقمي.
     </footer>
+
+    <!-- استدعاء ملف الجافاسكريبت عبر Flask -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
