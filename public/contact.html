@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | DigiSou9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- النافبار -->
+    <nav>
+        <div class="logo">Digi<span>Sou9</span></div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="/" style="text-decoration: none; color: var(--text-main); font-weight: 600;">الرئيسية</a>
+            <a href="/contact" style="text-decoration: none; color: var(--primary-color); font-weight: 800;">اتصل بنا</a>
+            <a href="/" class="nav-cart">🛒 سلة المشتريات</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="padding: 50px 20px;">
+        <h1>تواصل معنا</h1>
+        <p>نحن هنا للإجابة على جميع استفساراتك حول الاشتراكات والبرمجيات</p>
+    </section>
+
+    <!-- فورم التواصل -->
+    <section class="products-section" style="max-width: 700px;">
+        <div class="product-card" style="padding: 40px;">
+            <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+                
+                <div>
+                    <label style="font-weight: 700; margin-bottom: 8px; display: block;">الاسم الكامل:</label>
+                    <input type="text" id="sender-name" placeholder="اكتب اسمك هنا..." style="width: 100%; padding: 12px; border: 1px solid #E5E7EB; border-radius: 8px; font-family: 'Cairo';" required>
+                </div>
+
+                <div>
+                    <label style="font-weight: 700; margin-bottom: 8px; display: block;">رسالتك:</label>
+                    <textarea id="sender-msg" placeholder="كيف يمكننا مساعدتك؟" rows="5" style="width: 100%; padding: 12px; border: 1px solid #E5E7EB; border-radius: 8px; font-family: 'Cairo'; resize: vertical;" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-buy" style="font-size: 1.1rem; padding: 15px;">إرسال عبر الواتساب 💬</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 DigiSou9. جميع الحقوق محفوظة لمتجرك الرقمي.
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const name = document.getElementById('sender-name').value;
+            const msg = document.getElementById('sender-msg').value;
+            // حط الرقم ديالك هنا (بدا ب 212)
+            const whatsappNumber = "212600000000"; 
+
+            const text = `السلام عليكم، أنا ${name}.\nعندي استفسار: ${msg}`;
+            const encodedText = encodeURIComponent(text);
+            
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
+        });
+    </script>
+</body>
+</html>
